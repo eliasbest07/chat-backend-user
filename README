@@ -1,0 +1,2 @@
+Backend en Node.js con Express, libreria usadas: bcryptjs cors express-validator jsonwebtoken mongoose,
+Registra usuarios en una base de datos conectada en MongoDB, tiene endpoint para registrar usuarios con correo y clave 
