@@ -39,6 +39,7 @@ const { email, password } = req.body;
     try {
     const usuarioDB = await Usuario.findOne({email});
     if( !usuarioDB){
+        console.log(usuarioDB);
         return res.status(404).json({
             ok:false,
             msg: 'correo no registrado'
@@ -52,11 +53,11 @@ const { email, password } = req.body;
             msg: 'contraseña incorrecta'
         });
     }
-    const tokenloging = await generarJWT(usuarioDB.id);
+    const token = await generarJWT(usuarioDB.id);
     res.json({
         ok: true,
         usuario: usuarioDB,
-        tokenloging
+        token
     });
 } catch (error) {
     return res.status(500).json({
